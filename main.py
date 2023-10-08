@@ -60,6 +60,7 @@ async def callback_query(client, call):
 
     bm = await client.edit_message_text(cid, mid, 'Download starting')
     video_path = await video_msg.download(progress=dl_progress, progress_args=(client, bm))
+    print(video_path)
     Negate(client, video_path, bm).start()
 
 
