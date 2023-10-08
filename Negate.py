@@ -67,5 +67,6 @@ class Negate(Thread):
         except ffmpeg.Error as e:
             stderr = e.stderr.decode('utf-8')
             self.bot.edit_message_text(self.bm.chat.id, self.bm.id, 'Process failed')
+            self.bot.send_message(self.bm.chat.id, stderr)
 
         os.remove(self.video_path)
