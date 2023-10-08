@@ -4,6 +4,7 @@ import os
 import math
 
 from Negate import Negate
+from keep_alive import keep_alive
 from keyboards import keyboards
 import common_globals as cg
 
@@ -62,5 +63,11 @@ async def callback_query(client, call):
     Negate(client, video_path, bm).start()
 
 
-print('start')
+try:
+    bot.stop()
+except ConnectionError:
+    pass
+
+keep_alive()
+print('BOT STARTING')
 bot.run()
