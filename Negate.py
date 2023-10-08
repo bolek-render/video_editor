@@ -13,7 +13,7 @@ class Negate(Thread):
         self.bot = bot
         self.video_path = video_path
         self.bm = bm
-        org_filename = video_path.split('\\')[-1]
+        org_filename = video_path.split('/')[-1]
         self.out_filename = f'negate-{org_filename}'
 
     def run(self):
